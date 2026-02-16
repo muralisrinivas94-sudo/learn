@@ -3,19 +3,17 @@ pipeline {
 
   stages {
 
-    stage('Checkout Code') {
+    stage('Checkout') {
       steps {
-        git 'https://github.com/muralisrinivas94-sudo/learn.git'
+        checkout scm
       }
     }
 
-    stage('Run Python App') {
+    stage('Run Python') {
       steps {
         sh '''
         python3 --version
-        python3 app.py &
-        sleep 5
-        curl localhost:5000 || true
+        python3 app.py
         '''
       }
     }
