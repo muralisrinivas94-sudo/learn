@@ -12,7 +12,6 @@ pipeline {
     stage('Run Python') {
       steps {
         sh '''
-        python3 --version
         python3 app.py
         '''
       }
