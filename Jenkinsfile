@@ -11,9 +11,8 @@ pipeline {
 
     stage('Run Python') {
       steps {
-        sh '''
+        sh
         python3 app.py
-        '''
       }
     }
   }
